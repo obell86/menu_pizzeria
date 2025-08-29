@@ -103,7 +103,7 @@ h1#page-title {
 /* Regola per Immagine Personalizzata Animata sul Pulsante Menu */
 .link-button.menu-button-highlight::before {
     content: ''; display: inline-block;
-    background-image: url('pizza2.png'); /* Assicurati sia il nome/percorso corretto */
+    background-image: url('Burger.png'); /* Assicurati sia il nome/percorso corretto */
     width: 1.9em; height: 1.9em; background-size: contain;
     background-repeat: no-repeat; background-position: center center;
     margin-right: 0.4em; vertical-align: middle;
