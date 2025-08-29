@@ -4,7 +4,7 @@ const fetch = require('node-fetch');
 const fs = require('fs');
 
 // --- Configurazione Airtable (CON I TUOI NUOVI DATI) ---
-const AIRTABLE_BASE_ID = 'patv7G4CZgIP2tixj'; // <-- NUOVO ID BASE INSERITO QUI
+const AIRTABLE_BASE_ID = 'appvjKQemc2HLdvtc'; // <-- NUOVO ID BASE INSERITO QUI
 // IMPORTANTE: Leggiamo la chiave segreta dalle variabili d'ambiente di Netlify!
 const AIRTABLE_PAT = process.env.AIRTABLE_PAT_KEY; 
 const MENU_CATEGORIE_TABLE_NAME = 'Menu_Categorie';
