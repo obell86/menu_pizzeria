@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Nostra Storia - Pizzeria [Nome Pizzeria]</title>
+
+    <!-- === FONT ESISTENTI E NUOVO FONT 'LORA' PER LA STORIA === -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Oswald:wght@400;600&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Link allo STESSO foglio di stile CSS della pagina principale -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- === STILI AGGIUNTIVI SOLO PER QUESTA PAGINA === -->
+    <style>
+        /* Sfondo con texture di carta leggera per tutto il corpo della pagina */
+        body {
+            background-color: #f5f1e8;
+            background-image: url('https://www.transparenttextures.com/patterns/subtle-grunge.png');
+            background-repeat: repeat;
+            background-attachment: fixed; /* Mantiene lo sfondo fisso durante lo scorrimento */
+        }
+
+        /* Stile specifico per il contenitore del testo della storia */
+        .story-text-container {
+            font-family: 'Lora', serif; /* Nuovo carattere per la storia */
+            font-size: 1.1rem;           /* Dimensione del testo leggermente più grande */
+            line-height: 1.8;            /* Maggiore spaziatura tra le righe per leggibilità */
+            color: #4a3c31;              /* Colore testo scuro e caldo */
+            padding-top: 1em;
+        }
+
+        /* Aggiunge un po' di spazio tra i paragrafi */
+        .story-text-container p {
+            margin-bottom: 1.5em;
+        }
+    </style>
+    <!-- === FINE STILI AGGIUNTIVI === -->
+    
+</head>
+<body>
+
+    <!-- Contenitore principale con lo stile "pergamena" dal tuo style.css -->
+    <div class="menu-page-container">
+
+        <!-- Link per tornare alla home page -->
+        <a href="index.html" class="back-link">← Torna Indietro</a>
+
+        <!-- Titolo della pagina (usa il font 'Oswald' dal tuo style.css) -->
+        <h1 id="menu-page-title">La Nostra Storia</h1>
+
+        <!-- 
+        ============================================================
+        ↓↓↓ PUOI MODIFICARE IL TESTO DELLA STORIA QUI SOTTO ↓↓↓
+        ============================================================
+        -->
+        <div class="story-text-container">
+            
+            <p>
+                <strong>La nostra storia inizia con un segreto, quello del lievito madre di Nonna Sofia, portato da un piccolo paese vicino a Napoli fino al cuore della nostra città.</strong> Era il 1978 quando Nonno Franco, con un forno a legna e la ricetta di sua moglie, decise di condividere il sapore autentico della vera pizza.
+            </p>
+            <p>
+                Non era solo una pizzeria, ma un punto di ritrovo. Un luogo dove le famiglie si riunivano, dove le risate si mescolavano al profumo del basilico fresco e del pomodoro San Marzano. Ogni pizza era una promessa: usare solo ingredienti genuini, rispettare i lunghi tempi di lievitazione e mettere un pezzo di cuore in ogni singolo impasto.
+            </p>
+            <p>
+                Oggi, quella stessa passione vive in noi. Portiamo avanti la tradizione di Nonna Sofia e Nonno Franco, onorando il loro sogno con la stessa dedizione. Vi invitiamo a sedervi al nostro tavolo, non solo come clienti, ma come parte della nostra grande famiglia.
+            </p>
+            
+        </div>
+        <!-- ============================================================ -->
+        <!-- ↑↑↑ FINE DELLA SEZIONE CHE PUOI MODIFICARE ↑↑↑ -->
+        <!-- ============================================================ -->
+
+    </div>
+
+</body>
+</html>
