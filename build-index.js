@@ -4,7 +4,7 @@ const fetch = require('node-fetch');
 const fs = require('fs');
 
 // --- Configurazione Airtable ---
-const AIRTABLE_BASE_ID = 'appGnw9kTGPSj9F59'; // NUOVO ID BASE
+const AIRTABLE_BASE_ID = 'patv7G4CZgIP2tixj'; // NUOVO ID BASE
 const AIRTABLE_PAT = process.env.AIRTABLE_PAT_KEY;
 const CONFIG_TABLE_NAME = 'Configurazione';
 const LINKS_TABLE_NAME = 'Links';
