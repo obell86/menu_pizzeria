@@ -1,12 +1,12 @@
 /* ===================================== */
-/* STYLE.CSS - Pub Neon Wood Intense v2.9 */
-/* Aumentato spazio verticale tra i pulsanti link */
+/* STYLE.CSS - Pizzeria Edition */
 /* ===================================== */
 
 /* --- Import Font (Lato, Oswald, Bebas Neue) --- */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Oswald:wght@400;600&family=Bebas+Neue&display=swap');
 
 /* --- Keyframes Animazioni --- */
+/* NUOVA ANIMAZIONE ROSSA */
 @keyframes neon-flicker-red {
   0%, 100% {
     text-shadow: 0 0 4px #fff, 0 0 8px #fff, 0 0 12px #f00, 0 0 18px #f00, 0 0 25px #f00, 0 0 35px #a00, 0 0 50px #a00;
@@ -18,23 +18,45 @@
   }
   5% {opacity: .7} 8% {opacity: 1} 15% {opacity: .6} 18% {opacity: 1} 30% {opacity: .8} 40% {opacity: 1} 60% {opacity: .75} 63% {opacity: 1} 75% {opacity: .9} 85% {opacity: 1} 92% {opacity: .7} 95% {opacity: 1}
 }
+@keyframes loading-loop{0%{width:0%}50%{width:100%}100%{width:0%}}
+@keyframes old-bar-flicker-dark{0%,100%{opacity:1;text-shadow:0 0 2px rgba(255,255,255,.7),0 0 5px rgba(200,200,200,.5)}50%{opacity:.6;text-shadow:0 0 2px rgba(255,255,255,.4)}5%{opacity:.7}8%{opacity:1}15%{opacity:.5}18%{opacity:1}30%{opacity:.8}40%{opacity:1}60%{opacity:.6}63%{opacity:1}75%{opacity:.8}85%{opacity:1}92%{opacity:.7}95%{opacity:1}}
+@keyframes logo-float-gentle{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+@keyframes menu-icon-sway {
+  0%, 100% { transform: rotate(0deg) translateX(0); }
+  25% { transform: rotate(-8deg) translateX(-1px); }
+  75% { transform: rotate(8deg) translateX(1px); }
+}
 
 /* --- Reset e Stili Globali --- */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;scroll-behavior:smooth}
 body{font-family:'Lato',sans-serif;line-height:1.6;color:#e0e0e0;display:flex;flex-direction:column;align-items:center;min-height:100vh; padding: 0;}
 
-/* --- Stili Sfondo Dinamico (Video/Immagine) --- */
+/* --- Stili Sfondo Dinamico --- */
 #background-container { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden; z-index: -2; background-color: black; }
 #background-video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center center; position: static; z-index: -1; display: none; }
-/* --- FINE Stili Sfondo --- */
 
-/* --- Contenitore Principale (index.html) --- */
+/* --- Contenitore Principale --- */
 .main-content{ width:100%; max-width:700px; display:flex; flex-direction:column; align-items:center; text-align:center; position:relative; z-index:1; padding: 3vw 5vw; }
 
-/* --- Stili Elementi Pagina (index.html) --- */
+/* --- Stili Elementi Pagina --- */
 #logo-container{margin-bottom:1.5em;filter:drop-shadow(0 2px 3px rgba(0,0,0,.4))}
-#logo-container img{ display:block; max-width: 240px; height:auto; margin:0 auto; animation:logo-float-gentle 4s ease-in-out infinite } /* Animazione presente */
-h1#page-title{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(3rem,10vw,5.5rem);color:#ccffcc;margin:.5em 0 1.5em 0;line-height:1.1;word-wrap:break-word;max-width:100%;text-transform:uppercase;position:relative;text-shadow:0 0 4px #fff,0 0 8px #fff,0 0 12px #0f0,0 0 18px #0f0,0 0 25px #0f0,0 0 35px #0a0,0 0 50px #0a0;animation:neon-flicker-green 4s infinite alternate linear} /* Animazione presente */
+#logo-container img{ display:block; max-width: 240px; height:auto; margin:0 auto; animation:logo-float-gentle 4s ease-in-out infinite }
+
+/* --- TITOLO CON NUOVO STILE ROSSO --- */
+h1#page-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    font-size: clamp(3rem, 10vw, 5.5rem);
+    color: #ffcccc; /* Colore di base rossastro chiaro */
+    margin: .5em 0 1.5em 0;
+    line-height: 1.1;
+    word-wrap: break-word;
+    max-width: 100%;
+    text-transform: uppercase;
+    position: relative;
+    text-shadow: 0 0 4px #fff, 0 0 8px #fff, 0 0 12px #f00, 0 0 18px #f00, 0 0 25px #f00, 0 0 35px #a00, 0 0 50px #a00;
+    animation: neon-flicker-red 4s infinite alternate linear;
+}
 
 /* === SEZIONE COUNTDOWN === */
 #countdown-container{margin:1em 0 2em 0;width:100%;max-width:450px;padding:.8em;background-color:rgba(0,0,0,.3);border-radius:6px;border:1px solid rgba(255,255,255,.1);text-align:center}
@@ -81,7 +103,7 @@ h1#page-title{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clam
 /* Regola per Immagine Personalizzata Animata sul Pulsante Menu */
 .link-button.menu-button-highlight::before {
     content: ''; display: inline-block;
-    background-image: url('pizza.png'); /* Assicurati sia il nome/percorso corretto */
+    background-image: url('pizza2.png'); /* Assicurati sia il nome/percorso corretto */
     width: 1.9em; height: 1.9em; background-size: contain;
     background-repeat: no-repeat; background-position: center center;
     margin-right: 0.4em; vertical-align: middle;
