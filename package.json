@@ -1,0 +1,23 @@
+{
+  "name": "menu_per_modifiche",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build-menu.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/obell86/menu_per_modifiche.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/obell86/menu_per_modifiche/issues"
+  },
+  "homepage": "https://github.com/obell86/menu_per_modifiche#readme",
+  "dependencies": {
+    "node-fetch": "^2.7.0"
+  }
+}
