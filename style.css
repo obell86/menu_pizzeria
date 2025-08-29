@@ -7,14 +7,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Oswald:wght@400;600&family=Bebas+Neue&display=swap');
 
 /* --- Keyframes Animazioni --- */
-@keyframes neon-flicker-green{0%,100%{text-shadow:0 0 4px #fff,0 0 8px #fff,0 0 12px #0f0,0 0 18px #0f0,0 0 25px #0f0,0 0 35px #0a0,0 0 50px #0a0;opacity:1}50%{text-shadow:0 0 2px #fff,0 0 5px #eee,0 0 8px #0f0,0 0 14px #0f0,0 0 20px #0f0,0 0 30px #0a0,0 0 45px #0a0;opacity:.9}5%{opacity:.7}8%{opacity:1}15%{opacity:.6}18%{opacity:1}30%{opacity:.8}40%{opacity:1}60%{opacity:.75}63%{opacity:1}75%{opacity:.9}85%{opacity:1}92%{opacity:.7}95%{opacity:1}}
-@keyframes loading-loop{0%{width:0%}50%{width:100%}100%{width:0%}}
-@keyframes old-bar-flicker-dark{0%,100%{opacity:1;text-shadow:0 0 2px rgba(255,255,255,.7),0 0 5px rgba(200,200,200,.5)}50%{opacity:.6;text-shadow:0 0 2px rgba(255,255,255,.4)}5%{opacity:.7}8%{opacity:1}15%{opacity:.5}18%{opacity:1}30%{opacity:.8}40%{opacity:1}60%{opacity:.6}63%{opacity:1}75%{opacity:.8}85%{opacity:1}92%{opacity:.7}95%{opacity:1}}
-@keyframes logo-float-gentle{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
-@keyframes menu-icon-sway { /* Animazione icona mantenuta */
-  0%, 100% { transform: rotate(0deg) translateX(0); }
-  25% { transform: rotate(-8deg) translateX(-1px); }
-  75% { transform: rotate(8deg) translateX(1px); }
+@keyframes neon-flicker-red {
+  0%, 100% {
+    text-shadow: 0 0 4px #fff, 0 0 8px #fff, 0 0 12px #f00, 0 0 18px #f00, 0 0 25px #f00, 0 0 35px #a00, 0 0 50px #a00;
+    opacity: 1;
+  }
+  50% {
+    text-shadow: 0 0 2px #fff, 0 0 5px #eee, 0 0 8px #f00, 0 0 14px #f00, 0 0 20px #f00, 0 0 30px #a00, 0 0 45px #a00;
+    opacity: 0.9;
+  }
+  5% {opacity: .7} 8% {opacity: 1} 15% {opacity: .6} 18% {opacity: 1} 30% {opacity: .8} 40% {opacity: 1} 60% {opacity: .75} 63% {opacity: 1} 75% {opacity: .9} 85% {opacity: 1} 92% {opacity: .7} 95% {opacity: 1}
 }
 
 /* --- Reset e Stili Globali --- */
@@ -79,7 +81,7 @@ h1#page-title{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clam
 /* Regola per Immagine Personalizzata Animata sul Pulsante Menu */
 .link-button.menu-button-highlight::before {
     content: ''; display: inline-block;
-    background-image: url(''); /* Assicurati sia il nome/percorso corretto */
+    background-image: url('pizza.png'); /* Assicurati sia il nome/percorso corretto */
     width: 1.9em; height: 1.9em; background-size: contain;
     background-repeat: no-repeat; background-position: center center;
     margin-right: 0.4em; vertical-align: middle;
