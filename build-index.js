@@ -4,7 +4,7 @@ const fetch = require('node-fetch');
 const fs = require('fs');
 
 // --- Configurazione Airtable ---
-const AIRTABLE_BASE_ID = 'appvjKQemc2HLdvtc'; // NUOVO ID BASE
+const AIRTABLE_BASE_ID = 'appvjKQemc2HLdvtc'; // ID BASE CORRETTO
 const AIRTABLE_PAT = process.env.AIRTABLE_PAT_KEY;
 const CONFIG_TABLE_NAME = 'Configurazione';
 const LINKS_TABLE_NAME = 'Links';
@@ -25,7 +25,6 @@ const defaultBackgroundTexture = "url('https://www.transparenttextures.com/patte
 
 // --- Funzioni Helper ---
 const getField = (fields, fieldName, defaultValue = null) => { if (!fields) return defaultValue; const value = fields[fieldName]; return (value !== undefined && value !== null && value !== '') ? value : defaultValue; };
-// La funzione getAttachmentUrl non è più necessaria per logo e sfondo principali
 
 async function buildIndex() {
     console.log("Inizio build completa della pagina principale...");
@@ -43,11 +42,11 @@ async function buildIndex() {
 
         // --- PREPARAZIONE DATI PER IL TEMPLATE ---
 
-        // 1. Sfondo (LOGICA MODIFICATA PER FILE LOCALI)
+        // 1. Sfondo (LOGICA CORRETTA PER FILE LOCALI)
         let videoSrc = '', videoDisplay = 'none', containerStyle = `background-image: ${defaultBackgroundTexture}; background-repeat: repeat;`;
         const backgroundFilename = getField(configFields, fieldMap.config.backgroundUrl);
         if (backgroundFilename) {
-            const backgroundPath = `/${backgroundFilename}`; // Usa il percorso dalla root del sito
+            const backgroundPath = `/assets/${backgroundFilename}`; // CORREZIONE: Aggiunto /assets/
             if (backgroundFilename.endsWith('.mp4') || backgroundFilename.endsWith('.webm')) {
                 videoSrc = backgroundPath;
                 videoDisplay = 'block';
@@ -62,12 +61,12 @@ async function buildIndex() {
         const titleSize = getField(configFields, fieldMap.config.titleSize, '');
         const titleStyle = titleSize ? `style="font-size: ${titleSize};"` : '';
 
-        // 3. Logo (LOGICA MODIFICATA PER FILE LOCALI)
+        // 3. Logo (LOGICA CORRETTA PER FILE LOCALI)
         const logoFilename = getField(configFields, fieldMap.config.logoUrl);
-        const logoUrl = logoFilename ? `/${logoFilename}` : null; // Usa il percorso dalla root del sito
+        const logoUrl = logoFilename ? `/assets/${logoFilename}` : null; // CORREZIONE: Aggiunto /assets/
         const logoHTML = logoUrl ? `<img src="${logoUrl}" alt="Logo">` : '';
 
-        // 4. Countdown
+        // 4. Countdown (Logica Invariata)
         const showCountdown = getField(configFields, fieldMap.config.showCountdown, false);
         const countdownTarget = getField(configFields, fieldMap.config.countdownTarget);
         const countdownLabel = getField(configFields, fieldMap.config.countdownLabel, '');
@@ -83,7 +82,7 @@ async function buildIndex() {
                 </div>`;
         }
         
-        // 5. Loader
+        // 5. Loader (Logica Invariata)
         const showLoader = getField(configFields, fieldMap.config.showLoader, false);
         const loaderText = getField(configFields, fieldMap.config.loaderText, 'Caricamento...');
         let loaderHTML = '';
@@ -91,7 +90,7 @@ async function buildIndex() {
             loaderHTML = `<div class="loader-container" id="loader"><div class="loader-bar"></div><span id="loading-text-container">${loaderText}</span></div>`;
         }
 
-        // 6. Link
+        // 6. Link (Logica Invariata)
         const linkedLinkIds = getField(configFields, fieldMap.config.linkedLinks, []);
         let linksHTML = '';
         if (linkedLinkIds.length > 0) {
@@ -113,8 +112,7 @@ async function buildIndex() {
         }
         if (!linksHTML) linksHTML = '<p>Nessun link disponibile.</p>';
         
-        // 7. Immagine Footer (Lasciata invariata, assume che sia ancora un Attachment)
-        // Se anche questa deve essere locale, applica la stessa logica del logo
+        // 7. Immagine Footer (Logica Invariata - Lasciata come Attachment)
         const footerImageUrl = configFields.footerImageUrl ? configFields.footerImageUrl[0].url : null;
         const footerImageAlt = getField(configFields, fieldMap.config.footerImageAlt, '');
         const footerImageHTML = footerImageUrl ? `<img src="${footerImageUrl}" alt="${footerImageAlt}">` : '';
