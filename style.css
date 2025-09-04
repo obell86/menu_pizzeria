@@ -1,27 +1,17 @@
 /* ===================================== */
-/* STYLE.CSS - Pizzeria Edition */
+/* STYLE.CSS - Pub Neon Wood Intense v2.9 */
+/* Aumentato spazio verticale tra i pulsanti link */
 /* ===================================== */
 
 /* --- Import Font (Lato, Oswald, Bebas Neue) --- */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Oswald:wght@400;600&family=Bebas+Neue&display=swap');
 
 /* --- Keyframes Animazioni --- */
-/* NUOVA ANIMAZIONE ROSSA */
-@keyframes neon-flicker-red {
-  0%, 100% {
-    text-shadow: 0 0 4px #fff, 0 0 8px #fff, 0 0 12px #f00, 0 0 18px #f00, 0 0 25px #f00, 0 0 35px #a00, 0 0 50px #a00;
-    opacity: 1;
-  }
-  50% {
-    text-shadow: 0 0 2px #fff, 0 0 5px #eee, 0 0 8px #f00, 0 0 14px #f00, 0 0 20px #f00, 0 0 30px #a00, 0 0 45px #a00;
-    opacity: 0.9;
-  }
-  5% {opacity: .7} 8% {opacity: 1} 15% {opacity: .6} 18% {opacity: 1} 30% {opacity: .8} 40% {opacity: 1} 60% {opacity: .75} 63% {opacity: 1} 75% {opacity: .9} 85% {opacity: 1} 92% {opacity: .7} 95% {opacity: 1}
-}
+@keyframes neon-flicker-green{0%,100%{text-shadow:0 0 4px #fff,0 0 8px #fff,0 0 12px #0f0,0 0 18px #0f0,0 0 25px #0f0,0 0 35px #0a0,0 0 50px #0a0;opacity:1}50%{text-shadow:0 0 2px #fff,0 0 5px #eee,0 0 8px #0f0,0 0 14px #0f0,0 0 20px #0f0,0 0 30px #0a0,0 0 45px #0a0;opacity:.9}5%{opacity:.7}8%{opacity:1}15%{opacity:.6}18%{opacity:1}30%{opacity:.8}40%{opacity:1}60%{opacity:.75}63%{opacity:1}75%{opacity:.9}85%{opacity:1}92%{opacity:.7}95%{opacity:1}}
 @keyframes loading-loop{0%{width:0%}50%{width:100%}100%{width:0%}}
 @keyframes old-bar-flicker-dark{0%,100%{opacity:1;text-shadow:0 0 2px rgba(255,255,255,.7),0 0 5px rgba(200,200,200,.5)}50%{opacity:.6;text-shadow:0 0 2px rgba(255,255,255,.4)}5%{opacity:.7}8%{opacity:1}15%{opacity:.5}18%{opacity:1}30%{opacity:.8}40%{opacity:1}60%{opacity:.6}63%{opacity:1}75%{opacity:.8}85%{opacity:1}92%{opacity:.7}95%{opacity:1}}
 @keyframes logo-float-gentle{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
-@keyframes menu-icon-sway {
+@keyframes menu-icon-sway { /* Animazione icona mantenuta */
   0%, 100% { transform: rotate(0deg) translateX(0); }
   25% { transform: rotate(-8deg) translateX(-1px); }
   75% { transform: rotate(8deg) translateX(1px); }
@@ -31,32 +21,18 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;scroll-behavior:smooth}
 body{font-family:'Lato',sans-serif;line-height:1.6;color:#e0e0e0;display:flex;flex-direction:column;align-items:center;min-height:100vh; padding: 0;}
 
-/* --- Stili Sfondo Dinamico --- */
+/* --- Stili Sfondo Dinamico (Video/Immagine) --- */
 #background-container { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden; z-index: -2; background-color: black; }
 #background-video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center center; position: static; z-index: -1; display: none; }
+/* --- FINE Stili Sfondo --- */
 
-/* --- Contenitore Principale --- */
+/* --- Contenitore Principale (index.html) --- */
 .main-content{ width:100%; max-width:700px; display:flex; flex-direction:column; align-items:center; text-align:center; position:relative; z-index:1; padding: 3vw 5vw; }
 
-/* --- Stili Elementi Pagina --- */
+/* --- Stili Elementi Pagina (index.html) --- */
 #logo-container{margin-bottom:1.5em;filter:drop-shadow(0 2px 3px rgba(0,0,0,.4))}
-#logo-container img{ display:block; max-width: 240px; height:auto; margin:0 auto; animation:logo-float-gentle 4s ease-in-out infinite }
-
-/* --- TITOLO CON NUOVO STILE ROSSO --- */
-h1#page-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-weight: 400;
-    font-size: clamp(3rem, 10vw, 5.5rem);
-    color: #ffcccc; /* Colore di base rossastro chiaro */
-    margin: .5em 0 1.5em 0;
-    line-height: 1.1;
-    word-wrap: break-word;
-    max-width: 100%;
-    text-transform: uppercase;
-    position: relative;
-    text-shadow: 0 0 4px #fff, 0 0 8px #fff, 0 0 12px #f00, 0 0 18px #f00, 0 0 25px #f00, 0 0 35px #a00, 0 0 50px #a00;
-    animation: neon-flicker-red 4s infinite alternate linear;
-}
+#logo-container img{ display:block; max-width: 240px; height:auto; margin:0 auto; animation:logo-float-gentle 4s ease-in-out infinite } /* Animazione presente */
+h1#page-title{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(3rem,10vw,5.5rem);color:#ccffcc;margin:.5em 0 1.5em 0;line-height:1.1;word-wrap:break-word;max-width:100%;text-transform:uppercase;position:relative;text-shadow:0 0 4px #fff,0 0 8px #fff,0 0 12px #0f0,0 0 18px #0f0,0 0 25px #0f0,0 0 35px #0a0,0 0 50px #0a0;animation:neon-flicker-green 4s infinite alternate linear} /* Animazione presente */
 
 /* === SEZIONE COUNTDOWN === */
 #countdown-container{margin:1em 0 2em 0;width:100%;max-width:450px;padding:.8em;background-color:rgba(0,0,0,.3);border-radius:6px;border:1px solid rgba(255,255,255,.1);text-align:center}
@@ -103,7 +79,7 @@ h1#page-title {
 /* Regola per Immagine Personalizzata Animata sul Pulsante Menu */
 .link-button.menu-button-highlight::before {
     content: ''; display: inline-block;
-    background-image: url('pizza3.png'); /* Assicurati sia il nome/percorso corretto */
+    background-image: url('Burger.png'); /* Assicurati sia il nome/percorso corretto */
     width: 1.9em; height: 1.9em; background-size: contain;
     background-repeat: no-repeat; background-position: center center;
     margin-right: 0.4em; vertical-align: middle;
@@ -122,30 +98,99 @@ body.error-page h1{color:#ff8a80;animation:none;text-shadow:none}
 /* ===================================== */
 /* === STILI PAGINA E MENU (menu.html) === */
 /* ===================================== */
-.menu-page-container{ width:100%; max-width:750px; margin:0 auto; padding:2em 2.5em; border-radius:5px; box-shadow:0 5px 20px rgba(0,0,0,.4); text-align:left; border:1px solid rgba(255,255,255,.1); background-color:#f5f1e8; background-image:url('https://www.transparenttextures.com/patterns/parchment.png'); background-repeat:repeat; color:#4a3c31; position: relative; z-index: 1; }
+.menu-page-container{ 
+    width:100%; max-width:750px; margin:0 auto; 
+    padding:2em 2.5em; 
+    border-radius:5px; 
+    box-shadow:0 5px 20px rgba(0,0,0,.4); 
+    text-align:left; 
+    border:1px solid rgba(0,0,0,.2); 
+    
+    /* --- MODIFICHE APPLICATE QUI --- */
+    background-color: #c24e57; /* Il tuo nuovo colore verde scuro */
+    background-image: url("https://www.transparenttextures.com/patterns/cubes.png"); /* La tua nuova trama */
+    color: #f0f0f0; /* Testo bianco/grigio chiaro per leggibilità */
+    /* --- FINE MODIFICHE --- */
+    
+    background-repeat:repeat; 
+    position: relative; 
+    z-index: 1; 
+}
 
-/* Stile Pulsante/Link "Torna Indietro" */
-.back-link { display: inline-block; margin-bottom: 1.5em; padding: 0.5em 1em; color: #7a5e4a; background-color: rgba(210, 199, 180, 0.4); border: 1px solid rgba(122, 94, 74, 0.3); border-radius: 4px; text-decoration: none; font-weight: 700; font-size: .9rem; transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 1px 2px rgba(0,0,0,0.1); line-height: 1; }
-.back-link:hover { color: #4a3c31; background-color: rgba(210, 199, 180, 0.6); text-decoration: none; box-shadow: 0 2px 4px rgba(0,0,0,0.15); }
+/* Stile Pulsante/Link "Torna Indietro" (adattato per sfondo scuro) */
+.back-link { 
+    display: inline-block; 
+    margin-bottom: 1.5em; 
+    padding: 0.5em 1em; 
+    color: #f0f0f0; /* Testo chiaro */
+    background-color: rgba(255, 255, 255, 0.1); 
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    border-radius: 4px; 
+    text-decoration: none; 
+    font-weight: 700; 
+    font-size: .9rem; 
+    transition: background-color 0.2s ease; 
+    line-height: 1; 
+}
+.back-link:hover { 
+    color: #ffffff; 
+    background-color: rgba(255, 255, 255, 0.2); 
+}
 
-/* Stili Menu Accordion */
-#menu-page-title{ text-align:center;font-family:'Oswald',sans-serif;color:#4a3c31;margin-bottom:1.5em;font-size:2.2rem;border-bottom:2px solid #d1c7b4;padding-bottom:.5em;text-shadow:0 1px 1px rgba(0,0,0,.1) }
-#menu-loading-message{ text-align:center;padding:2em;color:#7a6c5d;font-style:italic }
+/* Stili Menu Accordion (adattati per sfondo scuro) */
+#menu-page-title{ 
+    text-align:center;
+    font-family:'Oswald',sans-serif;
+    color: #ffffff; /* Titolo bianco */
+    margin-bottom:1.5em;
+    font-size:2.2rem;
+    border-bottom:2px solid rgba(255, 255, 255, 0.3); /* Bordo chiaro */
+    padding-bottom:.5em;
+    text-shadow:0 1px 1px rgba(0,0,0,.4);
+}
+#menu-loading-message{ text-align:center;padding:2em;color:#cccccc;font-style:italic }
 #menu-content{ margin-top:1.5em }
 .menu-category{ margin-bottom:2.5em }
 .menu-category:last-child{ margin-bottom:.5em }
-.category-title{ font-family:'Oswald',sans-serif;font-size:1.8rem;font-weight:600;color:#7a5e4a;padding:.6em 0;border-bottom:3px double #c8bda8;margin-bottom:1em;cursor:pointer;position:relative;transition:color .2s ease;outline:none;user-select:none }
-.category-title:hover,.category-title:focus{ color:#4a3c31 }
-.category-title::after{ content:'+';position:absolute;right:5px;top:50%;transform:translateY(-50%);font-size:1.6rem;font-weight:400;color:#a89a85;transition:transform .3s ease,color .2s ease }
-.menu-category.category-open > .category-title::after{ content:'−';transform:translateY(-50%) rotate(180deg);color:#7a5e4a }
-.menu-category.category-open > .category-title{ border-bottom-style:solid;border-bottom-width:1px;border-bottom-color:#e0d9c6 }
+.category-title{ 
+    font-family:'Oswald',sans-serif;
+    font-size:1.8rem;
+    font-weight:600;
+    color: #a3d9a5; /* Verde chiaro per i titoli categoria */
+    padding:.6em 0;
+    border-bottom:3px double rgba(255, 255, 255, 0.2); /* Bordo chiaro */
+    margin-bottom:1em;
+    cursor:pointer;
+    position:relative;
+    transition:color .2s ease;
+    outline:none;
+    user-select:none 
+}
+.category-title:hover,.category-title:focus{ color:#ffffff }
+.category-title::after{ 
+    content:'+';
+    position:absolute;
+    right:5px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:1.6rem;
+    font-weight:400;
+    color: rgba(255, 255, 255, 0.5); /* Icona + chiara */
+    transition:transform .3s ease,color .2s ease 
+}
+.menu-category.category-open > .category-title::after{ 
+    content:'−';
+    transform:translateY(-50%) rotate(180deg);
+    color: #a3d9a5; 
+}
+.menu-category.category-open > .category-title{ border-bottom-style:solid;border-bottom-width:1px;border-bottom-color:rgba(255, 255, 255, 0.1); }
 .item-list{ list-style:none;padding-left:.5em;margin-top:0;max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1) }
-.menu-item{ display:flex;justify-content:space-between;align-items:flex-start;padding:1.2em .5em;border-bottom:1px dotted #c8bda8;gap:1em }
+.menu-item{ display:flex;justify-content:space-between;align-items:flex-start;padding:1.2em .5em;border-bottom:1px dotted rgba(255, 255, 255, 0.2);gap:1em }
 .menu-item:last-child{ border-bottom:none }
 .item-details{ flex-grow:1 }
-.item-name{ font-weight:700;color:#5a463a;display:block;margin-bottom:.3em;font-size:1.1rem }
-.item-description{ font-size:.95rem;color:#6b5b4d;line-height:1.5 }
-.item-price{ font-weight:700;color:#4a3c31;white-space:nowrap;margin-left:auto;padding-left:1em;font-size:1.05rem }
+.item-name{ font-weight:700;color:#ffffff;display:block;margin-bottom:.3em;font-size:1.1rem }
+.item-description{ font-size:.95rem;color:#dddddd;line-height:1.5 }
+.item-price{ font-weight:700;color:#ffffa0;white-space:nowrap;margin-left:auto;padding-left:1em;font-size:1.05rem } /* Giallo chiaro per il prezzo */
 
 /* --- Responsive Design --- */
 @media(max-width:768px){
@@ -159,7 +204,7 @@ body.error-page h1{color:#ff8a80;animation:none;text-shadow:none}
 @media(max-width: 600px){
   .main-content{ max-width: 100%; padding: 5vw 1em 8vw 1em; }
   #logo-container { margin-bottom: 1em; }
-  #logo-container img{ max-width: 150px; } /* Logo mobile corretto */
+  #logo-container img{ max-width: 150px; } 
   h1#page-title { font-size: clamp(2.2rem, 9vw, 3.5rem); margin-top: 0.3em; margin-bottom: 1em; }
   #countdown-container { margin-top: 0.8em; margin-bottom: 1.5em; padding: 0.6em; max-width: 90%; }
   #countdown-timer span { font-size: clamp(1.5rem, 5vw, 2rem); padding: 0 0.1em; }
@@ -168,11 +213,10 @@ body.error-page h1{color:#ff8a80;animation:none;text-shadow:none}
   .loader-container { margin-bottom: 1.8em; padding: 0.6em 1em; max-width: 90%; }
   .link-container{
       max-width: 95%; margin-top: 1.2em;
-      gap: 1.2em; /* Gap mobile aumentato */
+      gap: 1.2em;
   }
   .link-button {
       padding: 0.8em 1.3em 0.8em 1em; font-size: 0.95rem;
-      /* margin-bottom: 0.4em; */ /* Margine mobile commentato */
   }
   .link-button::after { right: 0.8em; }
   .link-button:hover::after { right: 0.6em; }
@@ -185,6 +229,6 @@ body.error-page h1{color:#ff8a80;animation:none;text-shadow:none}
   .category-title{font-size:1.4rem;padding:0.5em 0;}
   .category-title::after{font-size:1.4rem;right:0;}
   .menu-item{flex-direction:column;align-items:flex-start;gap:0.4em;padding:1em 0;}
-  .item-price{padding-left:0;margin-left:0;margin-top:0.3em;font-size:1rem;background-color:rgba(200,189,168,0.1);padding:0.1em 0.5em;border-radius:3px;display:inline-block;}
+  .item-price{padding-left:0;margin-left:0;margin-top:0.3em;font-size:1rem;background-color:rgba(255, 255, 255, 0.1);padding:0.1em 0.5em;border-radius:3px;display:inline-block;}
   .item-list{padding-left:0;}
 }
